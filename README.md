@@ -7,11 +7,11 @@
 ## 📌 Project Overview
 This project evaluates the performance differences between two fundamental Forward Error Correction (FEC) decoding strategies: **Hard Decision Decoding** and **Soft Decision Decoding**. 
 
-Using **Binary Phase Shift Keying (BPSK)** modulation over an **Additive White Gaussian Noise (AWGN)** channel, the project simulates a communication system protected by a simple **Repetition Code (3,1)**.The study validates that Soft Decision decoding offers superior error performance compared to Hard Decision decoding, particularly in noisy environments.
+Using **Binary Phase Shift Keying (BPSK)** modulation over an **Additive White Gaussian Noise (AWGN)** channel, the project simulates a communication system protected by a simple **Repetition Code (3,1)**. The study validates that Soft Decision decoding offers superior error performance compared to Hard Decision decoding, particularly in noisy environments.
 
 The project is divided into two key components:
-1. **Theoretical Verification:** A Monte Carlo simulation generating Bit Error Rate (BER) curves to quantify "Soft Decision Gain" and analyze the impact of LLR quantization (3-bit and 4-bit).
-2. **Practical Application:** A real-world demonstration transmitting medical **Electrocardiogram (ECG)** data through a noisy channel to visualize how Soft Decision decoding preserves critical signal features.
+1.  **Theoretical Verification:** A Monte Carlo simulation generating Bit Error Rate (BER) curves to quantify "Soft Decision Gain" and analyze the impact of LLR quantization (3-bit and 4-bit).
+2.  **Practical Application:** A real-world demonstration transmitting medical **Electrocardiogram (ECG)** data through a noisy channel to visualize how Soft Decision decoding preserves critical signal features.
 
 ---
 
@@ -23,7 +23,7 @@ The project is divided into two key components:
     * **Soft Decision:** Uses Log-Likelihood Ratios (LLR) to aggregate "confidence" levels for higher accuracy.
 * **Hardware Quantization Simulation:** Simulates limited hardware precision by quantizing LLR values to 3-bit and 4-bit integers.
 * **Soft Decision Gain Calculation:** Automatically calculates the dB gain achieved by Soft Decision at a target BER (e.g., $10^{-3}$).
-* **ECG Signal Reconstruction:** visual comparison of an original ECG signal against reconstructed versions from Hard and Soft decoders.
+* **ECG Signal Reconstruction:** Visual comparison of an original ECG signal against reconstructed versions from Hard and Soft decoders.
 
 ---
 
@@ -66,6 +66,7 @@ The simulation compared Hard Decision against Soft Decision (Float, 3-bit, and 4
 ### Practical Application (ECG)
 The ECG demonstration highlights that at low SNR, Hard Decision decoding frequently corrupts the medical waveform, making diagnosis impossible. In contrast, Soft Decision decoding effectively reconstructs the signal, preserving the QRS complex and other vital features.
 
+![ECG Signal Reconstruction](images/ECG-2.png)
 ---
 
 ## ⚙️ Installation & Usage
